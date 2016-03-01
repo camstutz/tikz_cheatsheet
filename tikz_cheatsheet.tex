@@ -30,6 +30,23 @@
         \tikzcmd{(\$(coord1)+(rel\_coord)\$)} calculate new coordinate \\
         \tikzcmd{(node.anchor)} anchor of a node\\
 
+        \section{Paths}
+        \tikzcmd{\textbackslash path[keys] (coord1) object (coord2);}\\
+        keys:\\
+        \tikzcmd{draw}\\
+        \tikzcmd{draw=none}\\
+        \tikzcmd{solid}\\
+        \tikzcmd{dashed}\\
+        \tikzcmd{dotted}\\
+        objects:\\
+        \tikzcmd{- -} draw line\\
+        \tikzcmd{->}/\tikzcmd{<-}/\tikzcmd{<->} draw arrow\\
+        \tikzcmd{rectangle} draw rectangle between coordinates\\
+        \tikzcmd{circle} draw circle\\
+        \tikzcmd{ellipse}\\
+        \tikzcmd{node} places a node at current postion\\
+        \tikzcmd{plot}\\
+
     \end{multicols}
 
 \end{document}
