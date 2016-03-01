@@ -8,7 +8,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{keystroke}
 
-\newcommand{\tikzcom}[1]{\textbf{#1}}
+\newcommand{\tikzcmd}[1]{\textbf{#1}}
 \newcommand{\tikzparam}[1]{\textbf{\emph{#1}}}
 \newcommand{\tikzspacer}{\vspace{9pt}}
 
@@ -21,6 +21,14 @@
     \begin{multicols}{2}
 
         \section{Coordinates}
+        \emph{Where is (0,0)}?\\
+        \tikzcmd{(x,y)} cartesian coordinates\\
+        \tikzcmd{($\phi$,r)} polar coordinates ($\phi$ in degrees)\\
+        \tikzcmd{+(coord)} relative coordinate to last coordinate\\
+        \tikzcmd{++(coord)} relative coordinate and move cursor\\
+        \tikzcmd{(coord1 -| 1)} perpendicular to coord1\\
+        \tikzcmd{(\$(coord1)+(rel\_coord)\$)} calculate new coordinate \\
+        \tikzcmd{(node.anchor)} anchor of a node\\
 
     \end{multicols}
 
