@@ -21,23 +21,26 @@
     \begin{multicols}{2}
 
         \section{Coordinates}
+        \tikzcmd{\textbackslash coordinate (\tikzparam{label}) at \tikzparam{coord};} define named coordinate\\
         \emph{Where is (0,0)}?\\
-        \tikzcmd{(x,y)} cartesian coordinates\\
-        \tikzcmd{($\phi$,r)} polar coordinates ($\phi$ in degrees)\\
-        \tikzcmd{+(coord)} relative coordinate to last coordinate\\
-        \tikzcmd{++(coord)} relative coordinate and move cursor\\
-        \tikzcmd{(coord1 -| 1)} perpendicular to coord1\\
-        \tikzcmd{(\$(coord1)+(rel\_coord)\$)} calculate new coordinate \\
-        \tikzcmd{(node.anchor)} anchor of a node\\
+        \tikzcmd{(\tikzparam{x},\tikzparam{y})} cartesian coordinates\\
+        \tikzcmd{(\tikzparam{$\phi$},\tikzparam{r})} polar coordinates ($\phi$ in degrees)\\
+        \tikzcmd{+(\tikzparam{coord})} relative coordinate to last coordinate\\
+        \tikzcmd{++(\tikzparam{coord})} relative coordinate and move cursor\\
+        \tikzcmd{(\tikzparam{coord} -| 1)} horizontal perpendicular to to \tikzparam{coord}\\
+        \tikzcmd{(\$(\tikzparam{coord})+(\tikzparam{rel\_coord})\$)} calculate new coordinate \\
+        \tikzcmd{(\tikzparam{node}.\tikzparam{anchor})} anchor of a node\\
 
         \section{Paths}
         \tikzcmd{\textbackslash path[keys] (coord1) object (coord2);}\\
         keys:\\
-        \tikzcmd{draw}\\
-        \tikzcmd{draw=none}\\
-        \tikzcmd{solid}\\
-        \tikzcmd{dashed}\\
-        \tikzcmd{dotted}\\
+        \tikzcmd{draw} draw the path by line\\
+        \tikzcmd{draw=none} do not draw line\\
+        \tikzcmd{solid} draw solid line\\
+        \tikzcmd{dashed} draw dashed line\\
+        \tikzcmd{dotted} draw dotted line\\
+        \tikzcmd{fill=\tikzparam{color}} fills the object with \tikzparam{color}\\
+        \tikzcmd{color=\tikzparam{color}} sets the line color\\
         objects:\\
         \tikzcmd{- -} draw line\\
         \tikzcmd{->}/\tikzcmd{<-}/\tikzcmd{<->} draw arrow\\
@@ -46,6 +49,19 @@
         \tikzcmd{ellipse}\\
         \tikzcmd{node} places a node at current postion\\
         \tikzcmd{plot}\\
+
+        \section{Nodes}
+        \tikzcmd{\textbackslash node[keys] (label) at (coord) \{content\};}\\
+        the keys of a path can be also used here\\
+        keys:\\
+        \tikzcmd{inner sep=\tikzparam{dist}} distance from content to node\\
+        \tikzcmd{outer sep=\tikzparam{dist}} distance from node to other objects\\
+        \tikzcmd{min width=\tikzparam{dist}} minimum width of node\\
+        \tikzcmd{min height=\tikzparam{dist}} minimum height of node\\
+        \tikzcmd{xshift=\tikzparam{dist}}/\tikzcmd{yshift=\tikzparam{dist}} shifting the node by \tikzparam{dist}\\
+        \tikzcmd{shift=(rel\_coord)} shift node\\
+        \tikzcmd{font=\tikzparam{fontconfig}} TeX commands to format text in node\\
+        \tikzcmd{node seperation=\tikzparam{dist}}\\
 
     \end{multicols}
 
