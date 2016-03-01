@@ -23,13 +23,14 @@
         \section{Coordinates}
         \tikzcmd{\textbackslash coordinate (\tikzparam{label}) at \tikzparam{coord};} define named coordinate\\
         \emph{Where is (0,0)}?\\
+        \emph{Difference between - - and to?}
         \tikzcmd{(\tikzparam{x},\tikzparam{y})} cartesian coordinates\\
         \tikzcmd{(\tikzparam{$\phi$},\tikzparam{r})} polar coordinates ($\phi$ in degrees)\\
         \tikzcmd{+(\tikzparam{coord})} relative coordinate to last coordinate\\
         \tikzcmd{++(\tikzparam{coord})} relative coordinate and move cursor\\
         \tikzcmd{(\tikzparam{coord} -| 1)} horizontal perpendicular to to \tikzparam{coord}\\
         \tikzcmd{(\$(\tikzparam{coord})+(\tikzparam{rel\_coord})\$)} calculate new coordinate \\
-        \tikzcmd{(\tikzparam{node}.\tikzparam{anchor})} anchor of a node\\
+        \tikzcmd{(\tikzparam{node}.\tikzparam{anchor})} anchor of a node
 
         \section{Paths}
         \tikzcmd{\textbackslash path[keys] (coord1) object (coord2);}\\
@@ -49,19 +50,36 @@
         \tikzcmd{ellipse}\\
         \tikzcmd{node} places a node at current postion\\
         \tikzcmd{plot}\\
+        line control:\\
+        \tikzcmd{in} / \tikzcmd{out}\\
+        \tikzcmd{control points}\\
+        \tikzcmd{intersections}\\
+        \tikzcmd{nodes at lines}
 
         \section{Nodes}
         \tikzcmd{\textbackslash node[keys] (label) at (coord) \{content\};}\\
-        the keys of a path can be also used here\\
+        \tikzcmd{\textbackslash begin\{minipage\}\{\tikzparam{content}\}\textbackslash end\{minipage\} } multi-line content\\
         keys:\\
+        the keys of a path can be also used here\\
         \tikzcmd{inner sep=\tikzparam{dist}} distance from content to node\\
         \tikzcmd{outer sep=\tikzparam{dist}} distance from node to other objects\\
         \tikzcmd{min width=\tikzparam{dist}} minimum width of node\\
         \tikzcmd{min height=\tikzparam{dist}} minimum height of node\\
-        \tikzcmd{xshift=\tikzparam{dist}}/\tikzcmd{yshift=\tikzparam{dist}} shifting the node by \tikzparam{dist}\\
+        \tikzcmd{xshift=\tikzparam{dist}} / \tikzcmd{yshift=\tikzparam{dist}} shifting the node by \tikzparam{dist}\\
         \tikzcmd{shift=(rel\_coord)} shift node\\
         \tikzcmd{font=\tikzparam{fontconfig}} TeX commands to format text in node\\
-        \tikzcmd{node seperation=\tikzparam{dist}}\\
+        \tikzcmd{node seperation=\tikzparam{dist}}
+
+        \section{Pics}
+        \begin{itemize}
+            \item defining a pic
+            \item arguments
+            \item accessing hierarchy
+        \end{itemize}
+
+        \section{Keys, styles, etc.}
+
+        \section{Layers}
 
     \end{multicols}
 
