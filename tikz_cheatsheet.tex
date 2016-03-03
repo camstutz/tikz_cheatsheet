@@ -11,6 +11,7 @@
 \newcommand{\tikzcmd}[1]{\textbf{#1}}
 \newcommand{\tikzparam}[1]{\textbf{\emph{#1}}}
 \newcommand{\tikzspacer}{\vspace{9pt}}
+\newcommand{\tikzlib}[1]{\textbf{#1}}
 
 
 
@@ -29,7 +30,9 @@
         \tikzcmd{+(\tikzparam{coord})} relative coordinate to last coordinate\\
         \tikzcmd{++(\tikzparam{coord})} relative coordinate and move cursor\\
         \tikzcmd{(\tikzparam{coord} -| 1)} horizontal perpendicular to to \tikzparam{coord}\\
-        \tikzcmd{(\$(\tikzparam{coord})+(\tikzparam{rel\_coord})\$)} calculate new coordinate \\
+        \tikzcmd{(\$(\tikzparam{coord})+(\tikzparam{rel\_coord})\$)} calculate new coordinate \tikzlib{calc}\\
+        \tikzcmd{(\$(\tikzparam{A})!0.33!(\tikzparam{B})\$)} coordinate 1/3 on line between A and B \tikzlib{calc}\\
+        \tikzcmd{(\$(\tikzparam{A})!\tikzparam{C}!(\tikzparam{B})\$)} projection of C to line between A and B \tikzlib{calc}\\
         \tikzcmd{(\tikzparam{node}.\tikzparam{anchor})} anchor of a node
 
         \section{Paths}
@@ -71,9 +74,7 @@
         \tikzcmd{node seperation=\tikzparam{dist}}
 
         \section{Pics}
-        \tikzcmd{\textbackslash tikzset\{\tikzparam{pic name}/.pic=\{\\
-           \tikzparam{pic definition}\\
-        \}\}}\\
+        \tikzcmd{\textbackslash tikzset\{\tikzparam{pic name}/.pic=\{\tikzparam{pic definition}\}\}} define new pic (short form)\\
         \tikzcmd{\textbackslash pic[\tikzparam{keys}] (\tikzparam{label}) \{\tikzparam{pic\_type}\} }
         \begin{itemize}
 
