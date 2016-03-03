@@ -68,7 +68,7 @@
         \tikzcmd{min width=\tikzparam{dist}} minimum width of node\\
         \tikzcmd{min height=\tikzparam{dist}} minimum height of node\\
         \tikzcmd{xshift=\tikzparam{dist}} / \tikzcmd{yshift=\tikzparam{dist}} shifting the node by \tikzparam{dist}\\
-        \tikzcmd{shift=(rel\_coord)} shift node\\
+        \tikzcmd{shift=\{(rel\_coord)\}} shift node\\
         \tikzcmd{font=\tikzparam{fontconfig}} TeX commands to format text in node\\
         \tikzcmd{node seperation=\tikzparam{dist}}
 
@@ -82,6 +82,18 @@
         \end{itemize}
 
         \section{Keys, styles, etc.}
+        %\tikzstyle{every label}=[\tikzparam{keys}] --- deprecated\\
+        %\tikzstyle{my style}[red]=[draw=#1,fill=#1!20]
+        \tikzcmd{\textbackslash tikzset\{\tikzparam{mystyle}/.style=\{\tikzparam{keys}\}\}} define a new style\\
+        \tikzcmd{\textbackslash tikzset\{\tikzparam{mystyle}/.style=\{label=\#1\}\}} a parameter \tikzparam{\#1} can be used\\
+
+        %\begin{tikzpicture}
+        %[some options,
+        %first style/.style={blah},
+        %second style/.style={blub}]    ...
+        %\end{tikzpicture}
+
+        \tikzcmd{\textbackslash pgfkeys\{/key family/key/.subkey = \{\tikzparam{value list}\}\}} basic operation to set PGF keys
 
         \section{Layers}
 
