@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
-\title{TikZ Cheatsheet}
+\title{The Ultimate TikZ Cheatsheet}
 \author{Christian Amstutz}
 \date{\today}
 
@@ -11,6 +11,7 @@
 \newcommand{\tikzcmd}[1]{\textbf{#1}}
 \newcommand{\tikzparam}[1]{\textbf{\emph{#1}}}
 \newcommand{\tikzspacer}{\vspace{9pt}}
+\newcommand{\tikzlib}[1]{\textbf{#1}}
 
 
 
@@ -29,7 +30,9 @@
         \tikzcmd{+(\tikzparam{coord})} relative coordinate to last coordinate\\
         \tikzcmd{++(\tikzparam{coord})} relative coordinate and move cursor\\
         \tikzcmd{(\tikzparam{coord} -| 1)} horizontal perpendicular to to \tikzparam{coord}\\
-        \tikzcmd{(\$(\tikzparam{coord})+(\tikzparam{rel\_coord})\$)} calculate new coordinate \\
+        \tikzcmd{(\$(\tikzparam{coord})+(\tikzparam{rel\_coord})\$)} calculate new coordinate \tikzlib{calc}\\
+        \tikzcmd{(\$(\tikzparam{A})!0.33!(\tikzparam{B})\$)} coordinate 1/3 on line between A and B \tikzlib{calc}\\
+        \tikzcmd{(\$(\tikzparam{A})!\tikzparam{C}!(\tikzparam{B})\$)} projection of C to line between A and B \tikzlib{calc}\\
         \tikzcmd{(\tikzparam{node}.\tikzparam{anchor})} anchor of a node
 
         \section{Paths}
@@ -37,9 +40,8 @@
         keys:\\
         \tikzcmd{draw} draw the path by line\\
         \tikzcmd{draw=none} do not draw line\\
-        \tikzcmd{solid} draw solid line\\
-        \tikzcmd{dashed} draw dashed line\\
-        \tikzcmd{dotted} draw dotted line\\
+        \tikzcmd{solid}/\tikzcmd{dashed}/\tikzcmd{dotted} line dashing\\
+        \tikzcmd{ultra thin}/\tikzcmd{normal}/\tikzcmd{ultra tick} line width\\
         \tikzcmd{fill=\tikzparam{color}} fills the object with \tikzparam{color}\\
         \tikzcmd{color=\tikzparam{color}} sets the line color\\
         objects:\\
@@ -66,16 +68,19 @@
         \tikzcmd{min width=\tikzparam{dist}} minimum width of node\\
         \tikzcmd{min height=\tikzparam{dist}} minimum height of node\\
         \tikzcmd{xshift=\tikzparam{dist}} / \tikzcmd{yshift=\tikzparam{dist}} shifting the node by \tikzparam{dist}\\
-        \tikzcmd{shift=(rel\_coord)} shift node\\
+        \tikzcmd{shift=\{(rel\_coord)\}} shift node\\
         \tikzcmd{font=\tikzparam{fontconfig}} TeX commands to format text in node\\
         \tikzcmd{node seperation=\tikzparam{dist}}
 
         \section{Pics}
+
+        \tikzcmd{\textbackslash tikzset\{\tikzparam{pic name}/.pic=\{\tikzparam{pic definition}\}\}} define new pic (short form)\\
         \tikzcmd{\textbackslash tikzset\{\tikzparam{pic name}/.pic=\{\\
            \tikzparam{pic definition}\\
         \}\}}\\
-        \tikzcmd{\textbackslash pic[\tikzparam{keys}] (\tikzparam{label}) \{\tikzparam{pic\_type}\} }\\
         \tikzcmd{\textbackslash tikzset\{pics/\tikzparam{pic name}/.style 2 args=\{code=\{\tikzparam{pic code with args \#1 \#2} \}\}\}}\\
+
+        \tikzcmd{\textbackslash pic[\tikzparam{keys}] (\tikzparam{label}) \{\tikzparam{pic\_type}\} }\\
 
         \begin{itemize}
             \item arguments
@@ -83,6 +88,18 @@
         \end{itemize}
 
         \section{Keys, styles, etc.}
+        %\tikzstyle{every label}=[\tikzparam{keys}] --- deprecated\\
+        %\tikzstyle{my style}[red]=[draw=#1,fill=#1!20]
+        \tikzcmd{\textbackslash tikzset\{\tikzparam{mystyle}/.style=\{\tikzparam{keys}\}\}} define a new style\\
+        \tikzcmd{\textbackslash tikzset\{\tikzparam{mystyle}/.style=\{label=\#1\}\}} a parameter \tikzparam{\#1} can be used\\
+
+        %\begin{tikzpicture}
+        %[some options,
+        %first style/.style={blah},
+        %second style/.style={blub}]    ...
+        %\end{tikzpicture}
+
+        \tikzcmd{\textbackslash pgfkeys\{/key family/key/.subkey = \{\tikzparam{value list}\}\}} basic operation to set PGF keys
 
         \section{Layers}
 
