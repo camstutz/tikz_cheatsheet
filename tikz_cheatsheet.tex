@@ -23,7 +23,7 @@
         \section{Coordinates}
         \tikzcmd{\textbackslash coordinate (\tikzparam{label}) at \tikzparam{coord};} define named coordinate\\
         \emph{Where is (0,0)}?\\
-        \emph{Difference between - - and to?}
+        \emph{Difference between - - and to?}\\
         \tikzcmd{(\tikzparam{x},\tikzparam{y})} cartesian coordinates\\
         \tikzcmd{(\tikzparam{$\phi$},\tikzparam{r})} polar coordinates ($\phi$ in degrees)\\
         \tikzcmd{+(\tikzparam{coord})} relative coordinate to last coordinate\\
@@ -74,9 +74,10 @@
         \tikzcmd{\textbackslash tikzset\{\tikzparam{pic name}/.pic=\{\\
            \tikzparam{pic definition}\\
         \}\}}\\
-        \tikzcmd{\textbackslash pic[\tikzparam{keys}] (\tikzparam{label}) \{\tikzparam{pic\_type}\} }
-        \begin{itemize}
+        \tikzcmd{\textbackslash pic[\tikzparam{keys}] (\tikzparam{label}) \{\tikzparam{pic\_type}\} }\\
+        \tikzcmd{\textbackslash tikzset\{pics/\tikzparam{pic name}/.style 2 args=\{code=\{\tikzparam{pic code with args \#1 \#2} \}\}\}}\\
 
+        \begin{itemize}
             \item arguments
             \item accessing hierarchy
         \end{itemize}
